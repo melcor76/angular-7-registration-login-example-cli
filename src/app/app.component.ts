@@ -12,11 +12,16 @@ export class AppComponent {
         private router: Router,
         private authenticationService: AuthenticationService
     ) {
+      this.registerTestUser()
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
 
     logout() {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
+    }
+
+    registerTestUser() {
+
     }
 }
